@@ -1,0 +1,33 @@
+
+    The list of rooms available are as follows :
+    
+    <table>
+        <tr>
+            <th>S.no</th>
+            <th>Even or Odd</th>
+            <th>Is Selected?</th>
+            <th>Room Type</th>
+            <th>Room price</th>
+            <th>Room Amenities</th>
+            <th>Room Photos</th>
+            <th>Room CheckInTime</th>
+            <th>Room checkOutTime</th>
+        </tr>
+        <tr 
+        ngClass="{{e ? 'even' : 'odd'}}"
+         *ngFor="let room of rooms; let e = even; let o = odd; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{e ? "Even" : "Odd"}}</td>
+            <td>
+                <button 
+                (click)="onSelect(room)">
+                Selected</button>
+            </td>
+            <td>{{room.roomType}}</td>
+            <td>{{room.amenities}}</td>
+            <td>{{room.price}}</td>
+            <td>{{room.photos}}</td>
+            <td>{{room.checkInTime}}</td>
+            <td>{{room.checkOutTime}}</td>
+        </tr>
+    </table>
